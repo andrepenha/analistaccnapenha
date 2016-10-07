@@ -1,2 +1,2 @@
 # analistaccnapenha
-Contribuidores: Antonio Gabriel Miranda
+Contribuidores: Antonio Miranda
