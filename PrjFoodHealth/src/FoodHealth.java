@@ -1,6 +1,7 @@
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JDesktopPane;
 
 /*
  * .
@@ -12,10 +13,14 @@ import java.awt.Toolkit;
  *
  * @author 740600935
  */
-public class FoodHealth extends javax.swing.JFrame {
-
+public class FoodHealth extends javax.swing.JFrame  {    
+    
+    JfVendas vendas = new JfVendas();
+    
     public FoodHealth() {
+        
         initComponents();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -26,11 +31,13 @@ public class FoodHealth extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
+        JmArquivo = new javax.swing.JMenu();
+        JmVendas = new javax.swing.JMenu();
+        JmPedidos = new javax.swing.JMenu();
+        JmEstoque = new javax.swing.JMenu();
+        JmFornecedores = new javax.swing.JMenu();
+        JmRletorios = new javax.swing.JMenu();
+        JmAjuda = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
@@ -42,20 +49,31 @@ public class FoodHealth extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frmFoodHealth"); // NOI18N
 
-        jMenu2.setLabel("Vendas");
-        jMenuBar1.add(jMenu2);
+        JmArquivo.setText("Arquivo");
+        jMenuBar1.add(JmArquivo);
 
-        jMenu3.setLabel("Pedidos");
-        jMenuBar1.add(jMenu3);
+        JmVendas.setLabel("Vendas");
+        JmVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JmVendasMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(JmVendas);
 
-        jMenu5.setLabel("Estoque");
-        jMenuBar1.add(jMenu5);
+        JmPedidos.setLabel("Pedidos");
+        jMenuBar1.add(JmPedidos);
 
-        jMenu6.setLabel("Fornecedores");
-        jMenuBar1.add(jMenu6);
+        JmEstoque.setLabel("Estoque");
+        jMenuBar1.add(JmEstoque);
 
-        jMenu7.setLabel("Relatórios");
-        jMenuBar1.add(jMenu7);
+        JmFornecedores.setLabel("Fornecedores");
+        jMenuBar1.add(JmFornecedores);
+
+        JmRletorios.setLabel("Relatórios");
+        jMenuBar1.add(JmRletorios);
+
+        JmAjuda.setText("Ajuda");
+        jMenuBar1.add(JmAjuda);
 
         setJMenuBar(jMenuBar1);
 
@@ -73,24 +91,40 @@ public class FoodHealth extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
+    private void JmVendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JmVendasMouseClicked
+        
+        ThreadJanela threadJanela = new ThreadJanela("vendas");        
+        threadJanela.run();       
+        
+    }//GEN-LAST:event_JmVendasMouseClicked
 
+    public static void main(String args[]) {
+        
+        final FoodHealth foodHealth = new FoodHealth();         
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FoodHealth().setVisible(true);
+                
+                foodHealth.setVisible(true);
+                foodHealth.setLocationRelativeTo(null);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu JmAjuda;
+    private javax.swing.JMenu JmArquivo;
+    private javax.swing.JMenu JmEstoque;
+    private javax.swing.JMenu JmFornecedores;
+    private javax.swing.JMenu JmPedidos;
+    private javax.swing.JMenu JmRletorios;
+    private javax.swing.JMenu JmVendas;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
+
+
