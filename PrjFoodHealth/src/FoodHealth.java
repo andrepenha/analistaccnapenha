@@ -56,7 +56,9 @@ public class FoodHealth extends javax.swing.JFrame  {
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(770, 480));
         setName("frmFoodHealth"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(770, 480));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
