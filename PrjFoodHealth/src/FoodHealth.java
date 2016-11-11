@@ -15,7 +15,7 @@ import javax.swing.JDesktopPane;
  */
 public class FoodHealth extends javax.swing.JFrame  {    
     
-    JfVendas vendas = new JfVendas();
+    Jfvenda venda = new Jfvenda();
     
     public FoodHealth() {
         
@@ -30,9 +30,11 @@ public class FoodHealth extends javax.swing.JFrame  {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jDesktopVenda = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         JmArquivo = new javax.swing.JMenu();
         JmVendas = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         JmPedidos = new javax.swing.JMenu();
         JmEstoque = new javax.swing.JMenu();
         JmFornecedores = new javax.swing.JMenu();
@@ -48,6 +50,23 @@ public class FoodHealth extends javax.swing.JFrame  {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frmFoodHealth"); // NOI18N
+        getContentPane().setLayout(null);
+
+        jDesktopVenda.setPreferredSize(new java.awt.Dimension(760, 400));
+
+        javax.swing.GroupLayout jDesktopVendaLayout = new javax.swing.GroupLayout(jDesktopVenda);
+        jDesktopVenda.setLayout(jDesktopVendaLayout);
+        jDesktopVendaLayout.setHorizontalGroup(
+            jDesktopVendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 760, Short.MAX_VALUE)
+        );
+        jDesktopVendaLayout.setVerticalGroup(
+            jDesktopVendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jDesktopVenda);
+        jDesktopVenda.setBounds(0, 0, 760, 410);
 
         JmArquivo.setText("Arquivo");
         jMenuBar1.add(JmArquivo);
@@ -58,6 +77,20 @@ public class FoodHealth extends javax.swing.JFrame  {
                 JmVendasMouseClicked(evt);
             }
         });
+        JmVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JmVendasActionPerformed(evt);
+            }
+        });
+
+        jMenuItem2.setText("Realizar Venda");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        JmVendas.add(jMenuItem2);
+
         jMenuBar1.add(JmVendas);
 
         JmPedidos.setLabel("Pedidos");
@@ -77,26 +110,24 @@ public class FoodHealth extends javax.swing.JFrame  {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 762, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 399, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void JmVendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JmVendasMouseClicked
         
-        ThreadJanela threadJanela = new ThreadJanela("vendas");        
-        threadJanela.run();       
+      /* ThreadJanela threadJanela = new ThreadJanela("vendas");        
+        threadJanela.run();  */     
         
     }//GEN-LAST:event_JmVendasMouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        jDesktopVenda.add(this.venda);
+        venda.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void JmVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmVendasActionPerformed
+        
+    }//GEN-LAST:event_JmVendasActionPerformed
 
     public static void main(String args[]) {
         
@@ -120,9 +151,11 @@ public class FoodHealth extends javax.swing.JFrame  {
     private javax.swing.JMenu JmPedidos;
     private javax.swing.JMenu JmRletorios;
     private javax.swing.JMenu JmVendas;
+    private javax.swing.JDesktopPane jDesktopVenda;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
