@@ -24,15 +24,13 @@ public class FoodHealth extends javax.swing.JFrame  {
     
     Jfvenda venda = new Jfvenda();
     JfPedidos pedidos = new JfPedidos();
-    jfSobre sobre = new jfSobre();
+    JfCadCliente cadClientes = new JfCadCliente();
+    JfCadFornecedor cadFornecedor = new JfCadFornecedor();
+    JfConsultaCliente consultCliente = new JfConsultaCliente();
+    Telentrega entrega = new Telentrega();
     
     public FoodHealth() {
-                
-        initComponents();   
-        
-        URL iconURL = getClass().getResource("/icone/foodhealth.png");
-        ImageIcon icon = new ImageIcon(iconURL);
-        this.setIconImage(icon.getImage());
+        initComponents();
         
     }
 
@@ -47,16 +45,18 @@ public class FoodHealth extends javax.swing.JFrame  {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         JmArquivo = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        JmRletorios = new javax.swing.JMenu();
+        JmClientes = new javax.swing.JMenu();
+        CadCliente = new javax.swing.JMenuItem();
+        ConsultaCliente = new javax.swing.JMenuItem();
         JmVendas = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         JmPedidos = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         JmEstoque = new javax.swing.JMenu();
         JmFornecedores = new javax.swing.JMenu();
+        CadastroFornecedor = new javax.swing.JMenuItem();
         JmAjuda = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -68,46 +68,58 @@ public class FoodHealth extends javax.swing.JFrame  {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(770, 480));
         setName("frmFoodHealth"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(770, 480));
+        setPreferredSize(new java.awt.Dimension(770, 530));
         getContentPane().setLayout(null);
 
+        jPanel1.setMinimumSize(new java.awt.Dimension(760, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(515, 600));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Bem-vindo Food&Health");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logotipo Food&healf.jpg"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(250, 250));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(243, 243, 243))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(272, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(167, 167, 167)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(327, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 760, 400);
+        jPanel1.setBounds(0, 0, 760, 480);
 
         JmArquivo.setText("Arquivo");
-
-        jMenuItem5.setText("Sair");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        JmArquivo.add(jMenuItem5);
-
         jMenuBar1.add(JmArquivo);
 
-        JmRletorios.setText("Clientes");
-        jMenuBar1.add(JmRletorios);
+        JmClientes.setText("Clientes");
+
+        CadCliente.setText("Cadastro");
+        CadCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadClienteActionPerformed(evt);
+            }
+        });
+        JmClientes.add(CadCliente);
+
+        ConsultaCliente.setText("Consulta");
+        ConsultaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultaClienteActionPerformed(evt);
+            }
+        });
+        JmClientes.add(ConsultaCliente);
+
+        jMenuBar1.add(JmClientes);
 
         JmVendas.setLabel("Vendas");
         JmVendas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,24 +153,32 @@ public class FoodHealth extends javax.swing.JFrame  {
         });
         JmPedidos.add(jMenuItem3);
 
+        jMenuItem4.setText("Tele-Entrega");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        JmPedidos.add(jMenuItem4);
+
         jMenuBar1.add(JmPedidos);
 
         JmEstoque.setLabel("Estoque");
         jMenuBar1.add(JmEstoque);
 
         JmFornecedores.setLabel("Fornecedores");
+
+        CadastroFornecedor.setText("Cadastro");
+        CadastroFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastroFornecedorActionPerformed(evt);
+            }
+        });
+        JmFornecedores.add(CadastroFornecedor);
+
         jMenuBar1.add(JmFornecedores);
 
         JmAjuda.setText("Ajuda");
-
-        jMenuItem4.setText("Sobre");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        JmAjuda.add(jMenuItem4);
-
         jMenuBar1.add(JmAjuda);
 
         setJMenuBar(jMenuBar1);
@@ -175,7 +195,7 @@ public class FoodHealth extends javax.swing.JFrame  {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         this.jPanel1.add(this.venda);
-        this.jLabel1.setText("");
+        this.jLabel1.setVisible(false);
         venda.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -185,28 +205,32 @@ public class FoodHealth extends javax.swing.JFrame  {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         this.jPanel1.add(this.pedidos);
-        this.jLabel1.setText("");
-        Dimension desktopSize = this.getSize();
-        Dimension jInternalFrameSize = pedidos.getSize();
-        int width = (desktopSize.width - jInternalFrameSize.width) / 2;
-        int height = (desktopSize.height - jInternalFrameSize.height) / 2;
-        pedidos.setLocation(width, height);
-        pedidos.setVisible(true);
+        this.jLabel1.setVisible(false);
+        pedidos.setVisible(true);// TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    private void CadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadClienteActionPerformed
+        this.jPanel1.add(this.cadClientes);
+        this.jLabel1.setVisible(false);
+        this.cadClientes.setVisible(true);
+    }//GEN-LAST:event_CadClienteActionPerformed
+
+    private void CadastroFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroFornecedorActionPerformed
+        this.jPanel1.add(this.cadFornecedor);
+        this.jLabel1.setVisible(false);
+        this.cadFornecedor.setVisible(true);
+    }//GEN-LAST:event_CadastroFornecedorActionPerformed
+
+    private void ConsultaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultaClienteActionPerformed
+        this.jPanel1.add(this.consultCliente);
+        this.jLabel1.setVisible(false);
+        this.consultCliente.setVisible(true);
+    }//GEN-LAST:event_ConsultaClienteActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        this.jPanel1.add(this.sobre);
-        this.jLabel1.setText("");  
-        Dimension desktopSize = this.getSize();
-        Dimension jInternalFrameSize = sobre.getSize();
-        int width = (desktopSize.width - jInternalFrameSize.width) / 2;
-        int height = (desktopSize.height - jInternalFrameSize.height) / 2;
-        sobre.setLocation(width, height);  
-        sobre.setVisible(true);        // TODO add your handling code here:
+       this.jPanel1.add(this.entrega);
+        this.jLabel1.setVisible(false);
+        this.entrega.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     public static void main(String args[]) {
@@ -224,12 +248,15 @@ public class FoodHealth extends javax.swing.JFrame  {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem CadCliente;
+    private javax.swing.JMenuItem CadastroFornecedor;
+    private javax.swing.JMenuItem ConsultaCliente;
     private javax.swing.JMenu JmAjuda;
     private javax.swing.JMenu JmArquivo;
+    private javax.swing.JMenu JmClientes;
     private javax.swing.JMenu JmEstoque;
     private javax.swing.JMenu JmFornecedores;
     private javax.swing.JMenu JmPedidos;
-    private javax.swing.JMenu JmRletorios;
     private javax.swing.JMenu JmVendas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
@@ -238,7 +265,6 @@ public class FoodHealth extends javax.swing.JFrame  {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables

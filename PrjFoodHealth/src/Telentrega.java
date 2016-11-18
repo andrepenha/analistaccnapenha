@@ -36,6 +36,7 @@ public class Telentrega extends javax.swing.JInternalFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
 
+        setBorder(null);
         setPreferredSize(new java.awt.Dimension(760, 400));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tele-Entrega"));
@@ -126,14 +127,14 @@ public class Telentrega extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(180, 180, 180)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
