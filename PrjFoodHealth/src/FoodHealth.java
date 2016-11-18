@@ -24,6 +24,7 @@ public class FoodHealth extends javax.swing.JFrame  {
     
     Jfvenda venda = new Jfvenda();
     JfPedidos pedidos = new JfPedidos();
+    jfSobre sobre = new jfSobre();
     
     public FoodHealth() {
         initComponents();
@@ -41,6 +42,7 @@ public class FoodHealth extends javax.swing.JFrame  {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         JmArquivo = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
         JmRletorios = new javax.swing.JMenu();
         JmVendas = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -49,6 +51,7 @@ public class FoodHealth extends javax.swing.JFrame  {
         JmEstoque = new javax.swing.JMenu();
         JmFornecedores = new javax.swing.JMenu();
         JmAjuda = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -87,6 +90,15 @@ public class FoodHealth extends javax.swing.JFrame  {
         jPanel1.setBounds(0, 0, 760, 400);
 
         JmArquivo.setText("Arquivo");
+
+        jMenuItem5.setText("Sair");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        JmArquivo.add(jMenuItem5);
+
         jMenuBar1.add(JmArquivo);
 
         JmRletorios.setText("Clientes");
@@ -133,6 +145,15 @@ public class FoodHealth extends javax.swing.JFrame  {
         jMenuBar1.add(JmFornecedores);
 
         JmAjuda.setText("Ajuda");
+
+        jMenuItem4.setText("Sobre");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        JmAjuda.add(jMenuItem4);
+
         jMenuBar1.add(JmAjuda);
 
         setJMenuBar(jMenuBar1);
@@ -160,8 +181,28 @@ public class FoodHealth extends javax.swing.JFrame  {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         this.jPanel1.add(this.pedidos);
         this.jLabel1.setText("");
-        pedidos.setVisible(true);// TODO add your handling code here:        // TODO add your handling code here:
+        Dimension desktopSize = this.getSize();
+        Dimension jInternalFrameSize = pedidos.getSize();
+        int width = (desktopSize.width - jInternalFrameSize.width) / 2;
+        int height = (desktopSize.height - jInternalFrameSize.height) / 2;
+        pedidos.setLocation(width, height);
+        pedidos.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        this.jPanel1.add(this.sobre);
+        this.jLabel1.setText("");  
+        Dimension desktopSize = this.getSize();
+        Dimension jInternalFrameSize = sobre.getSize();
+        int width = (desktopSize.width - jInternalFrameSize.width) / 2;
+        int height = (desktopSize.height - jInternalFrameSize.height) / 2;
+        sobre.setLocation(width, height);  
+        sobre.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     public static void main(String args[]) {
         
@@ -191,6 +232,8 @@ public class FoodHealth extends javax.swing.JFrame  {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
