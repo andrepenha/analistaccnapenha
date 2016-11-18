@@ -27,7 +27,12 @@ public class FoodHealth extends javax.swing.JFrame  {
     jfSobre sobre = new jfSobre();
     
     public FoodHealth() {
-        initComponents();
+                
+        initComponents();   
+        
+        URL iconURL = getClass().getResource("/icone/foodhealth.png");
+        ImageIcon icon = new ImageIcon(iconURL);
+        this.setIconImage(icon.getImage());
         
     }
 
