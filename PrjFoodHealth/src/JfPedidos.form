@@ -71,11 +71,63 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="16">
-                <Column editable="false" title="Id" type="java.lang.Object"/>
-                <Column editable="false" title="Nome" type="java.lang.Object"/>
-                <Column editable="false" title="Fone" type="java.lang.Object"/>
-                <Column editable="false" title="Atendido" type="java.lang.Boolean"/>
+              <Table columnCount="4" rowCount="12">
+                <Column editable="true" title="Id" type="java.lang.Object">
+                  <Data value="00001"/>
+                  <Data value="00002"/>
+                  <Data value="00003"/>
+                  <Data value="00004"/>
+                  <Data value="00005"/>
+                  <Data value="00006"/>
+                  <Data value="00007"/>
+                  <Data value="00008"/>
+                  <Data value="00009"/>
+                  <Data value="00010"/>
+                  <Data value="00011"/>
+                  <Data value="00012"/>
+                </Column>
+                <Column editable="true" title="Nome" type="java.lang.Object">
+                  <Data value="Ana"/>
+                  <Data value="Joana"/>
+                  <Data value="Maria"/>
+                  <Data value="Jo&#xe3;o"/>
+                  <Data value="Silvio"/>
+                  <Data value="Andr&#xe9;"/>
+                  <Data value="Claudio"/>
+                  <Data value="Lisa"/>
+                  <Data value="Marcos"/>
+                  <Data value="Ana"/>
+                  <Data value="Maria"/>
+                  <Data value="Joana"/>
+                </Column>
+                <Column editable="true" title="Fone" type="java.lang.Object">
+                  <Data value="(51)1243-6578"/>
+                  <Data value="(51)3245-6798"/>
+                  <Data value="(51)4356-7612"/>
+                  <Data value="(51)3290-2134"/>
+                  <Data value="(51)4390-3212"/>
+                  <Data value="(51)3299-3290"/>
+                  <Data value="(51)2123-4390"/>
+                  <Data value="(51)1090-3279"/>
+                  <Data value="(51)2130-9001"/>
+                  <Data value="(51)3847-9386"/>
+                  <Data value="(51)0259-8989"/>
+                  <Data value="(15)8201-9090"/>
+                </Column>
+                <Column editable="true" title="Atendido" type="java.lang.Boolean">
+                  <Data value="true"/>
+                  <Data value="true"/>
+                  <Data value="true"/>
+                  <Data value="true"/>
+                  <Data value="null"/>
+                  <Data value="true"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="true"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                  <Data value="true"/>
+                </Column>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

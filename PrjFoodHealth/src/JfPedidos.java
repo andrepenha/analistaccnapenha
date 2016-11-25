@@ -42,22 +42,18 @@ public class JfPedidos extends javax.swing.JInternalFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"00001", "Ana", "(51)1243-6578",  new Boolean(true)},
+                {"00002", "Joana", "(51)3245-6798",  new Boolean(true)},
+                {"00003", "Maria", "(51)4356-7612",  new Boolean(true)},
+                {"00004", "João", "(51)3290-2134",  new Boolean(true)},
+                {"00005", "Silvio", "(51)4390-3212", null},
+                {"00006", "André", "(51)3299-3290",  new Boolean(true)},
+                {"00007", "Claudio", "(51)2123-4390", null},
+                {"00008", "Lisa", "(51)1090-3279", null},
+                {"00009", "Marcos", "(51)2130-9001",  new Boolean(true)},
+                {"00010", "Ana", "(51)3847-9386", null},
+                {"00011", "Maria", "(51)0259-8989", null},
+                {"00012", "Joana", "(15)8201-9090",  new Boolean(true)}
             },
             new String [] {
                 "Id", "Nome", "Fone", "Atendido"
@@ -66,16 +62,9 @@ public class JfPedidos extends javax.swing.JInternalFrame {
             Class[] types = new Class [] {
                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(jTable1);
