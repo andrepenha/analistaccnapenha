@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -171,7 +174,15 @@ public class JfCadCliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+             String ObjButtons[] = {"SIm","Não"};
+            int PromptResult = JOptionPane.showOptionDialog(null, 
+                "Você deseja salvar os dados?", "Food & Health", 
+                JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, 
+                ObjButtons,ObjButtons[1]);
+            if(PromptResult==0)
+            {
+             // Salva os dados no Banco de dados         
+            }          
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
