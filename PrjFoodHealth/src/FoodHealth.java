@@ -253,6 +253,7 @@ public class FoodHealth extends javax.swing.JFrame  {
         this.jPanel1.add(this.sobre);
         this.jLabel1.setVisible(false);
         this.sobre.setVisible(true);
+        this.sobre.setLocation((this.getSize().width  - sobre.getSize().width) / 2, (this.getSize().height - sobre.getSize().height) / 2);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     public static void main(String args[]) {
