@@ -64,6 +64,7 @@ public class JfCadFornecedor extends javax.swing.JInternalFrame {
         jTextPane9 = new javax.swing.JTextPane();
 
         setBorder(null);
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(760, 468));
 
         jScrollPane3.setViewportView(jTextPane3);

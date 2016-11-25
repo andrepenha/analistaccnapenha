@@ -54,6 +54,7 @@ public class Jfvenda extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
 
         setBorder(null);
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(760, 400));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

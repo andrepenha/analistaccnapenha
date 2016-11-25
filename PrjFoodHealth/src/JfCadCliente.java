@@ -48,6 +48,7 @@ public class JfCadCliente extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setBorder(null);
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(760, 400));
 
         jLabel6.setText("Cidade:");

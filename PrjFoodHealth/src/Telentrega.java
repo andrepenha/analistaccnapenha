@@ -37,6 +37,7 @@ public class Telentrega extends javax.swing.JInternalFrame {
         jTextField1 = new javax.swing.JTextField();
 
         setBorder(null);
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(760, 400));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tele-Entrega"));

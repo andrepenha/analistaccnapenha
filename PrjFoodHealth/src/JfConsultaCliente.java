@@ -50,6 +50,7 @@ public class JfConsultaCliente extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setBorder(null);
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(760, 400));
 
         jLabel5.setText("Bairro:");
@@ -93,7 +94,7 @@ public class JfConsultaCliente extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(32, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
