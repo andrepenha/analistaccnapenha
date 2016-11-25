@@ -3,6 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import java.net.URL;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -51,6 +52,7 @@ public class FoodHealth extends javax.swing.JFrame  {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         JmArquivo = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         JmClientes = new javax.swing.JMenu();
         CadCliente = new javax.swing.JMenuItem();
         ConsultaCliente = new javax.swing.JMenuItem();
@@ -106,6 +108,15 @@ public class FoodHealth extends javax.swing.JFrame  {
         jPanel1.setBounds(0, 0, 760, 480);
 
         JmArquivo.setText("Arquivo");
+
+        jMenuItem6.setText("Sair");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        JmArquivo.add(jMenuItem6);
+
         jMenuBar1.add(JmArquivo);
 
         JmClientes.setText("Clientes");
@@ -256,6 +267,10 @@ public class FoodHealth extends javax.swing.JFrame  {
         this.sobre.setLocation((this.getSize().width  - sobre.getSize().width) / 2, (this.getSize().height - sobre.getSize().height) / 2);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
     public static void main(String args[]) {
         
         final FoodHealth foodHealth = new FoodHealth();         
@@ -289,6 +304,7 @@ public class FoodHealth extends javax.swing.JFrame  {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
